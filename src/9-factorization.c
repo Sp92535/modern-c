@@ -4,9 +4,9 @@
 
 void factor(size_t n);
 
-int main()
+int main(int argc, char const *argv[])
 {
-    factor(106);
+    factor(atoi(argv[1]));
     return EXIT_SUCCESS;
 }
 
