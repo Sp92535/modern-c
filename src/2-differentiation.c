@@ -23,7 +23,7 @@ int main()
 double F(double (*func_ptr)(double), double x, double h)
 {
 	double num = (*func_ptr)(x + h) - (*func_ptr)(x - h);
-	double den = (*func_ptr)(2 * h);
+	double den = 2 * h;
 	return num / den;
 }
 
