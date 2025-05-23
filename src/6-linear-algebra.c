@@ -8,8 +8,7 @@ double dot_v2v(size_t N, const double[static N], const double[static N]);
 void dot_m2v(size_t M, size_t N, const double[M][N], const double[static N], double[M]);
 void printArr(double arr[], size_t n);
 
-int main()
-{
+int main() {
 
     // dot product
     size_t N = NS;
@@ -36,30 +35,24 @@ int main()
     return EXIT_SUCCESS;
 }
 
-double dot_v2v(size_t N, const double v1[static N], const double v2[static N])
-{
+double dot_v2v(size_t N, const double v1[static N], const double v2[static N]) {
     double res = 0;
-    for (size_t i = 0; i < N; i++)
-    {
+    for (size_t i = 0; i < N; i++) {
         res += v1[i] * v2[i];
     }
     return res;
 }
 
-void dot_m2v(size_t M, size_t N, const double mat[M][N], const double vec[static N], double res[M])
-{
-    for (size_t i = 0; i < M; i++)
-    {
+void dot_m2v(size_t M, size_t N, const double mat[M][N], const double vec[static N], double res[M]) {
+    for (size_t i = 0; i < M; i++) {
         res[i] = dot_v2v(N, vec, mat[i]);
     }
 }
 
 // utility to print array
-void printArr(double arr[], size_t n)
-{
+void printArr(double arr[], size_t n) {
     printf("[ ");
-    for (size_t i = 0; i < n; i++)
-    {
+    for (size_t i = 0; i < n; i++) {
         printf("%f ", arr[i]);
     }
     printf("]\n");

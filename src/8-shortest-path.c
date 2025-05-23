@@ -1,14 +1,13 @@
-#include <stdio.h>
-#include <stddef.h>
 #include <math.h>
+#include <stddef.h>
+#include <stdio.h>
 #define N 10
 
 // We'll apply Warshall's Algorithm although it is slower
 
 void shortest_path(size_t graph[N][N]);
 
-int main()
-{
+int main() {
     size_t graph[10][10] = {
         {29, __SIZE_MAX__, 37, 61, __SIZE_MAX__, 94, __SIZE_MAX__, __SIZE_MAX__, 88, 52},
         {__SIZE_MAX__, 17, 3, __SIZE_MAX__, __SIZE_MAX__, 7, 26, __SIZE_MAX__, __SIZE_MAX__, 49},
@@ -29,16 +28,12 @@ int main()
     printf("shortest path from %ld -> %ld = %ld\n", src, dst, graph[src][dst]);
 }
 
-void shortest_path(size_t graph[N][N])
-{
-    for (size_t i = 0; i < N; i++)
-    {
-        for (size_t j = 0; j < N; j++)
-        {
+void shortest_path(size_t graph[N][N]) {
+    for (size_t i = 0; i < N; i++) {
+        for (size_t j = 0; j < N; j++) {
             if (j == i)
                 continue;
-            for (size_t k = 0; k < N; k++)
-            {
+            for (size_t k = 0; k < N; k++) {
                 if (k == i)
                     continue;
                 if (graph[i][k] < __SIZE_MAX__ && graph[j][i] < __SIZE_MAX__)
